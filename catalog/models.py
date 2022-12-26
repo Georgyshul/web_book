@@ -65,6 +65,9 @@ class Book(models.Model):
     isbn = models.CharField(
         max_length=13, verbose_name="ISBN",
         help_text='Должно содержать 13 символов')
+    image = models.ImageField(
+        upload_to='images', verbose_name='Обложка',
+        default='0')
 
     def __str__(self):
         return self.title        
@@ -80,7 +83,7 @@ class Book(models.Model):
     class Meta:
         ordering = ('title',)
         verbose_name = 'Книга'
-        verbose_name_plural = 'Книги'        
+        verbose_name_plural = 'Книги'       
 
 
 class Status(models.Model):

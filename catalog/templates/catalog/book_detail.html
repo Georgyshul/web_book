@@ -2,6 +2,9 @@
 
 {% block content %}
 <h1>{{book.title}}</h1>
+{% if book.image != '0' %}
+  <img src="{{ book.image.url}}" alt="connect" style="max-height:300px">
+{% endif %}
   {% for author in book.author.all  %}
     <p>
       <b>Автор:</b>
